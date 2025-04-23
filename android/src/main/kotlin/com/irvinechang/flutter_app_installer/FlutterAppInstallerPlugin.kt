@@ -134,9 +134,9 @@ class FlutterAppInstallerPlugin: FlutterPlugin, MethodCallHandler, ActivityAware
 
     // Match both PackageInfo for there signatures
     return if (Build.VERSION.SDK_INT < Build.VERSION_CODES.P) {
-      sysPackageInfo.signatures[0] == targetPkgInfo.signatures[0]
+      sysPackageInfo!!.signatures[0] == targetPkgInfo!!.signatures[0]
     } else {
-      targetPkgInfo.signingInfo == sysPackageInfo.signingInfo
+      targetPkgInfo!!.signingInfo == sysPackageInfo!!.signingInfo
     }
   }
 
